@@ -21,7 +21,7 @@ namespace CMP1903M
             Console.WriteLine("How much money do you want to enter into the machine?");
             t.insertMoney(Convert.ToInt32(Console.ReadLine()));
             t.printTicket();
-
+                Console.WriteLine("testing git push shit")
             }
             
         }
