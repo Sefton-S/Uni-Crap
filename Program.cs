@@ -10,10 +10,11 @@ namespace CMP1903M
     {
         static void Main(string[] args)
         {
+            TicketMachine t = new TicketMachine();
             bool loop = true;
             while(loop == true)
             {
-            TicketMachine t = new TicketMachine();
+            
             Console.WriteLine("What is the price of the ticket?");
             t.ticketPrice = Convert.ToInt32(Console.ReadLine());
             //Console.ReadLine();
@@ -21,7 +22,6 @@ namespace CMP1903M
             Console.WriteLine("How much money do you want to enter into the machine?");
             t.insertMoney(Convert.ToInt32(Console.ReadLine()));
             t.printTicket();
-                Console.WriteLine("testing git push shit");
             }
             
         }
