@@ -14,14 +14,12 @@ namespace CMP1903M
             bool loop = true;
             while(loop == true)
             {
-            
-            Console.WriteLine("What is the price of the ticket?");
-            t.ticketPrice = Convert.ToInt32(Console.ReadLine());
-            //Console.ReadLine();
-            //int amount = 5;
-            Console.WriteLine("How much money do you want to enter into the machine?");
-            t.insertMoney(Convert.ToInt32(Console.ReadLine()));
-            t.printTicket();
+                Console.WriteLine("What is the price of the ticket?");
+                t.ticketPrice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("How much money do you want to enter into the machine?");
+                t.insertMoney(Convert.ToInt32(Console.ReadLine()));
+                t.printTicket();
+                t.empty();
             }
             
         }

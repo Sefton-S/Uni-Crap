@@ -23,15 +23,18 @@ namespace CMP1903M
                 if (value > 0)
                 {
                     _ticketPrice = value;
+                    Console.WriteLine("Do you have a discount code? (Enter \"y\" for yes, anything else for no)");
+                    string discountYesNo = Console.ReadLine();
+                    if(discountYesNo == "y")
+                    {
+                        discount();
+                    }
                 }
 
                 else
                 {
                     Console.WriteLine("Fucking idiot lol");
                 }
-                    
-                
-                
             }
         }
 
@@ -56,8 +59,16 @@ namespace CMP1903M
             
             if(amount > 0)
             {
-                _balance += amount;
-                Console.WriteLine("stuff");
+                Console.WriteLine("Do you want a refund? (Enter \"y\" for yes, anything else for no)");
+                string refundYesNo = Console.ReadLine();
+                if(refundYesNo == "y")
+                {
+                    //refund();
+                }
+                else
+                {
+                    _balance += amount;
+                }
             }
             else
             {
@@ -95,7 +106,34 @@ namespace CMP1903M
         {
              Console.WriteLine($"Balance: £{_balance}"); Console.WriteLine($"Total: £{_total}"); Console.WriteLine($"Ticket Price: £{_ticketPrice}");
         }
+        public void empty()
+        {
+            Console.WriteLine("Do you want to empty the machine? (Enter \"y\" for yes, anything else for no)");
+            string answer = Console.ReadLine();
+            if (answer == "y")
+            {
+                _total = 0;
+                Console.WriteLine("Machine successfully emptied");
+            }
+        }
+        public void discount()
+        {
+            Console.WriteLine("Enter your code");
+            string code = Console.ReadLine();
+            if (code == "123")
+            {
+                _ticketPrice -= 2;
+                if (_ticketPrice < 0)
+                {
+                    _ticketPrice = 0;
+                }
+                Console.WriteLine("Discount successfully applied for £2 off your ticket");
+                Console.WriteLine($"Your ticket now costs £{_ticketPrice}");
+            } 
+        }
+        public void refund()
+        {
 
-
+        }
     }
 }
